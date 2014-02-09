@@ -1,0 +1,13 @@
+{
+  "name": "ember-sc_top-build-tools",
+  "version": "0.0.0",
+  "description": "> A framework for creating ambitious web applications.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Kurkowski <john.kurkowski@crowdstrike.com>",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+  }
+}
