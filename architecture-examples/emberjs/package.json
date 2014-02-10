@@ -14,6 +14,9 @@
     "gulp-concat": "~2.1.7",
     "gulp-styl": "~0.2.0",
     "gulp-livereload": "~1.1.1",
-    "tiny-lr": "0.0.5"
+    "tiny-lr": "0.0.5",
+    "ecstatic": "~0.4.13",
+    "gulp-ember-handlebars": "~0.5.1",
+    "streamqueue": "0.0.4"
   }
 }
