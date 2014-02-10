@@ -3,33 +3,13 @@ module.exports = function(grunt) {
 	//All grunt related functions
 
 	grunt.initConfig({
-		jshint: {
-			files: ['gruntfile.js', 'app/controllers/*.js', 'app/*.js', 'app/views/*.js', 'app/routes/*.js'],
-			options: {
-				eqeqeq: true,
-				eqnull: true,
-				latedef: true,
-				undef: true,
-				globalstrict:true,
-				force:true,
-				globals: {
-					jQuery: true,
-					console: true,
-					module: true,
-					document: true,
-					Ember: true,
-					$: true,
-					App: true
-				}
-			}
-		},
 		concat: {
 			vendor: {
-				src: ['app/library/jquery-1.9.1.js', 'app/library/handlebars-1.0.0.js', 'app/library/ember-1.0.0.js'],
+				src: ['bower_components/jquery/jquery.min.js', 'bower_components/handlebars/handlebars.runtime.js', 'bower_components/ember/ember.js', 'bower_components/ember-data/ember-data.js', 'bower_components/ember-localstorage-adapter/localstorage_adapter.js'],
 				dest:'debug/lib.js'
 			},
 			app: {
-				src: ['app/app.js', 'debug/templates.js', 'app/controllers/*.js', 'app/views/*.js', 'app/routes/*.js'],
+				src: ['js/**/*.js'],
 				dest:'debug/app.js'
 			},
 			test: {
@@ -48,7 +28,7 @@ module.exports = function(grunt) {
 		sass: {
 			css: {
 				files: {
-					'debug/app.css': 'app/css/base.scss'
+					'debug/app.css': 'bower_components/todomvc-common/base.css'
 				}
 			}
 		},
@@ -69,7 +49,7 @@ module.exports = function(grunt) {
 					}
 				},
 				files: {
-					"debug/templates.js": ["app/templates/*.hbs","app/templates/components/*.hbs"]
+					"debug/templates.js": ["js/**/*.hbs"]
 				}
 			}
 		},
@@ -91,14 +71,14 @@ module.exports = function(grunt) {
 		},
 		uglify: {
 			build: {
-				src: ['debug/lib.js','debug/app.js'],
-				dest: 'release/app.min.js'
+				src: ['debug/lib.js', 'debug/templates.js', 'debug/app.js'],
+				dest: 'release/app.js'
 			}
 		},
 		cssmin: {
 			compress: {
 				files: {
-					"release/app.min.css": ["debug/app.css"]
+					"release/app.css": ["debug/app.css"]
 				}
 			}
 		},
@@ -114,7 +94,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			scripts: {
-				files: ['app/library/*.js', 'app/*.js', 'app/controllers/*.js', 'app/views/*.js', 'app/routes/*.js', 'app/css/*.scss', 'app/templates/**/*.hbs', 'app/tests/*.js'],
+				files: ['js/**/*.js', 'js/**/*.hbs'],
 				tasks: ['ember_handlebars','concat', 'sass'],
 				options: {
 					debounceDelay: 100
@@ -159,7 +139,6 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -171,5 +150,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-qunit');
 
 	grunt.registerTask('default', ['ember_handlebars', 'concat', 'sass', 'clean', 'copy', 'connect', 'watch']);
-	grunt.registerTask('release', ['jshint','uglify', 'cssmin', 'clean', 'copy']);
+	grunt.registerTask('release', ['uglify', 'cssmin', 'clean', 'copy']);
 };
