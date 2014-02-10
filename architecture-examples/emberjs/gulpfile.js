@@ -10,8 +10,9 @@ var refresh = require('gulp-livereload');
 var lr = require('tiny-lr');
 var server = lr();
 var streamqueue = require('streamqueue');
+var uglify = require('gulp-uglify');
 
-gulp.task('scripts', function() {
+function scriptStream() {
     var js, templates;
 
     js = gulp.src([
@@ -28,19 +29,27 @@ gulp.task('scripts', function() {
             outputType: 'browser'
         }));
 
-    streamqueue({ objectMode: true },
+    return streamqueue({ objectMode: true },
         js,
         templates
     )
         .pipe(concat('dest.js'))
+}
+
+function styleStream(options) {
+    return gulp.src(['bower_components/**/*.css'])
+        .pipe(concat('dest.css'))
+        .pipe(styl(options || {}));
+}
+
+gulp.task('scripts', function() {
+    scriptStream()
         .pipe(gulp.dest('build'))
         .pipe(refresh(server));
 })
 
 gulp.task('styles', function() {
-    gulp.src(['bower_components/**/*.css'])
-        .pipe(concat('dest.css'))
-        .pipe(styl({compress : true}))
+    styleStream()
         .pipe(gulp.dest('build'))
         .pipe(refresh(server))
 })
@@ -63,4 +72,13 @@ gulp.task('default', function() {
     gulp.watch('bower_components/**/*.css', function(event) {
         gulp.run('styles');
     })
+})
+
+gulp.task('release', function() {
+    scriptStream()
+        .pipe(uglify())
+        .pipe(gulp.dest('release'));
+
+    styleStream({compress : true})
+        .pipe(gulp.dest('release'));
 })

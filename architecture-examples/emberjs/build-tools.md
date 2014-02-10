@@ -13,4 +13,4 @@ gulp
 
 ## Production
 
-TODO
+gulp release
