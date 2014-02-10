@@ -2,13 +2,15 @@
 
 ## Installing
 
+    npm install -g grunt-cli
+
     bower install
     npm install
 
 ## Development
 
-TODO
+    grunt
 
 ## Production
 
-TODO
+    grunt release
