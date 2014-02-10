@@ -9,5 +9,11 @@
   "author": "John Kurkowski <john.kurkowski@crowdstrike.com>",
   "license": "BSD-2-Clause",
   "devDependencies": {
+    "gulp-util": "~2.2.14",
+    "gulp": "~3.5.2",
+    "gulp-concat": "~2.1.7",
+    "gulp-styl": "~0.2.0",
+    "gulp-livereload": "~1.1.1",
+    "tiny-lr": "0.0.5"
   }
 }

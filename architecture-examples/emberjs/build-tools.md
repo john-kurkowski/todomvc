@@ -2,12 +2,14 @@
 
 ## Installing
 
+    npm install -g gulp
+
     bower install
     npm install
 
 ## Development
 
-TODO
+gulp
 
 ## Production
 
