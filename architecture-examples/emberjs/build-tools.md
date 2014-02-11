@@ -2,13 +2,20 @@
 
 ## Installing
 
+    npm install -g yo
+
     bower install
     npm install
 
 ## Development
 
-TODO
+    grunt server
+
+Starting from scratch?
+
+    npm install -g generator-charcoal
+    yo charcoal
 
 ## Production
 
-TODO
+    grunt
