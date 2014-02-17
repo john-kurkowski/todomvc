@@ -9,7 +9,7 @@
 
 ## Development
 
-TODO
+    grunt server
 
 Starting from scratch? Check out Ember App Kit's [Getting
 Started](http://iamstef.net/ember-app-kit/guides/getting-started.html), which
@@ -17,4 +17,4 @@ prescribes `git clone`ing Ember App Kit and removing its `.git` folder.
 
 ## Production
 
-TODO
+    grunt dist

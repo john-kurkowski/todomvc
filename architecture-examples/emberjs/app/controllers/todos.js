@@ -1,7 +1,4 @@
-/*global Todos, Ember */
-'use strict';
-
-Todos.TodosController = Ember.ArrayController.extend({
+export default Ember.ArrayController.extend({
 	actions: {
 		createTodo: function () {
 			var title, todo;

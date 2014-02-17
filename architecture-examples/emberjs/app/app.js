@@ -1,6 +1,6 @@
 import Resolver from 'resolver';
 
-var App = Ember.Application.extend({
+var Todos = Ember.Application.extend({
   LOG_ACTIVE_GENERATION: true,
   LOG_MODULE_RESOLVER: true,
   LOG_TRANSITIONS: true,
@@ -10,4 +10,4 @@ var App = Ember.Application.extend({
   Resolver: Resolver['default']
 });
 
-export default App;
+export default Todos;

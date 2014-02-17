@@ -1,7 +1,4 @@
-/*global Todos, Ember */
-'use strict';
-
-Todos.EditTodoView = Ember.TextField.extend({
+var EditTodoView = Ember.TextField.extend({
 	focusOnInsert: function () {
 		// Re-set input value to get rid of a reduntant text selection
 		this.$().val(this.$().val());
@@ -9,4 +6,6 @@ Todos.EditTodoView = Ember.TextField.extend({
 	}.on('didInsertElement')
 });
 
-Ember.Handlebars.helper('edit-todo', Todos.EditTodoView);
+Ember.Handlebars.helper('edit-todo', EditTodoView);
+
+export default EditTodoView;

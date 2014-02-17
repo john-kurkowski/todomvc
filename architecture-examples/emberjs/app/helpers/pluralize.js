@@ -1,7 +1,4 @@
-/*global Todos, Ember */
-'use strict';
-
-Ember.Handlebars.helper('pluralize', function (singular, count) {
+export default Ember.Handlebars.helper('pluralize', function (singular, count) {
 	/* From Ember-Data */
 	var inflector = new Ember.Inflector(Ember.Inflector.defaultRules);
 
