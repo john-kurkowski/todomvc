@@ -9,7 +9,7 @@
 
 ## Development
 
-TODO
+    brunch watch --server
 
 Starting from scratch? There are many [Brunch
 skeletons](https://github.com/brunch/brunch/wiki/Skeletons#wiki-ember) to suit
@@ -21,4 +21,4 @@ was the most minimal and up to date, based on Ember's Starter Kit.
 
 ## Production
 
-TODO
+    brunch build --production

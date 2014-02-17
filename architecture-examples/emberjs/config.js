@@ -1,21 +1,11 @@
 exports.config = {
   paths: {
-    watched: ['app', 'envs', 'vendor', 'test']
+    watched: ['app', 'envs', 'bower_components', 'vendor', 'test']
   },
   files: {
     javascripts: {
       joinTo: {
-        'javascripts/app.js': /^(app|envs\/development)/,
-        'javascripts/vendor.js': /^(vendor\/scripts\/(common|development)|vendor\\scripts\\(common|development))/
-      },
-      order: {
-        before: [
-          'vendor/scripts/common/console-polyfill.js',
-          'vendor/scripts/common/jquery.js',
-          'vendor/scripts/common/handlebars.js',
-          'vendor/scripts/development/ember.js',
-          'vendor/scripts/development/ember-data.js'
-        ]
+        'javascripts/app.js': /^(app|envs\/development)/
       }
     },
     stylesheets: {
@@ -41,17 +31,7 @@ exports.config = {
       files: {
         javascripts: {
           joinTo: {
-            'javascripts/app.js': /^(app|envs\/production)/,
-            'javascripts/vendor.js': /^(vendor\/scripts\/(common|development)|vendor\\scripts\\(common|development))/
-          },
-          order: {
-            before: [
-              'vendor/scripts/common/console-polyfill.js',
-              'vendor/scripts/common/jquery.js',
-              'vendor/scripts/common/handlebars.js',
-              'vendor/scripts/production/ember.js',
-              'vendor/scripts/production/ember-data.js'
-            ]
+            'javascripts/app.js': /^(app|envs\/production)/
           }
         }
       },
