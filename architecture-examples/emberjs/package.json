@@ -2,12 +2,27 @@
   "name": "ember-sc_top-build-tools",
   "version": "0.0.0",
   "description": "> A framework for creating ambitious web applications.",
-  "main": "index.js",
+  "engines": {
+    "node": "~0.6.10 || 0.8 || 0.9"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "brunch watch --server",
+    "update:ember": "node setup.js update:ember",
+    "update:skeleton": "node setup.js update:skeleton"
   },
   "author": "John Kurkowski <john.kurkowski@crowdstrike.com>",
   "license": "BSD-2-Clause",
+  "dependencies": {
+    "javascript-brunch": "~1.7.0",
+    "css-brunch": "~1.7.0",
+    "stylus-brunch": "~1.7.0",
+    "uglify-js-brunch": "~1.7.0",
+    "clean-css-brunch": "~1.7.0",
+    "auto-reload-brunch": "~1.7.0",
+    "ember-handlebars-brunch": "git://github.com/gcollazo/ember-handlebars-brunch.git#master"
+  },
   "devDependencies": {
+    "karma": "*",
+    "karma-qunit": "*"
   }
 }
