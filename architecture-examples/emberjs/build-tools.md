@@ -2,6 +2,8 @@
 
 ## Installing
 
+    npm install -g mimosa
+
     bower install
     npm install
 
