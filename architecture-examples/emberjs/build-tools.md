@@ -4,12 +4,9 @@
 
     npm install -g mimosa
 
-    bower install
-    npm install
-
 ## Development
 
-TODO
+    mimosa watch -s
 
 ## Production
 
